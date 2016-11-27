@@ -58,8 +58,9 @@
     background: linear-gradient(to bottom, #fa90ba, #f981b1); }
 
 .poketype-button {
-  margin-bottom: 16px; }
-  .poketype-button:active, .poketype-button.selected {
+  margin-bottom: 16px;
+  cursor: pointer; }
+  .poketype-button:active, .poketype-button:hover, .poketype-button.selected {
     opacity: 0.5; }
 
 .result-container {
