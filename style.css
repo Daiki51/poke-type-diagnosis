@@ -21,7 +21,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
   border-radius: 4px; }
   .poketype[data-poketype="0"] {
     background: #b8b895; }
