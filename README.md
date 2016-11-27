@@ -1,2 +1,4 @@
 
-# Poke Type Diagnosis
+# Pokemon Type Diagnosis
+
+「ポケットモンスター サン・ムーン」に登場するフェスサークルアトラクション「タイプ相性 診断」を効率的に攻略するためのヘルパーアプリです。
