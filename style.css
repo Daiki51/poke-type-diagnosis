@@ -21,62 +21,44 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
   .poketype[data-poketype="0"] {
-    border: 1px solid #b8b895;
-    background: linear-gradient(to bottom, #b8b895, #b2b28c); }
+    background: #b8b895; }
   .poketype[data-poketype="1"] {
-    border: 1px solid #dc5949;
-    background: linear-gradient(to bottom, #dc5949, #da4d3c); }
+    background: #dc5949; }
   .poketype[data-poketype="2"] {
-    border: 1px solid #73b8ea;
-    background: linear-gradient(to bottom, #73b8ea, #66b1e8); }
+    background: #73b8ea; }
   .poketype[data-poketype="3"] {
-    border: 1px solid #f2d479;
-    background: linear-gradient(to bottom, #f2d479, #f1d06b); }
+    background: #f2d479; }
   .poketype[data-poketype="4"] {
-    border: 1px solid #95c779;
-    background: linear-gradient(to bottom, #95c779, #8cc26e); }
+    background: #95c779; }
   .poketype[data-poketype="5"] {
-    border: 1px solid #b8e7e7;
-    background: linear-gradient(to bottom, #b8e7e7, #ade3e3); }
+    background: #b8e7e7; }
   .poketype[data-poketype="6"] {
-    border: 1px solid #873530;
-    background: linear-gradient(to bottom, #873530, #7c312c); }
+    background: #873530; }
   .poketype[data-poketype="7"] {
-    border: 1px solid #9b5fa7;
-    background: linear-gradient(to bottom, #9b5fa7, #93589f); }
+    background: #9b5fa7; }
   .poketype[data-poketype="8"] {
-    border: 1px solid #e3cb8e;
-    background: linear-gradient(to bottom, #e3cb8e, #e0c582); }
+    background: #e3cb8e; }
   .poketype[data-poketype="9"] {
-    border: 1px solid #b2bdea;
-    background: linear-gradient(to bottom, #b2bdea, #a6b3e7); }
+    background: #b2bdea; }
   .poketype[data-poketype="10"] {
-    border: 1px solid #e36c9b;
-    background: linear-gradient(to bottom, #e36c9b, #e15f92); }
+    background: #e36c9b; }
   .poketype[data-poketype="11"] {
-    border: 1px solid #bdb85f;
-    background: linear-gradient(to bottom, #bdb85f, #b9b354); }
+    background: #bdb85f; }
   .poketype[data-poketype="12"] {
-    border: 1px solid #c2a75f;
-    background: linear-gradient(to bottom, #c2a75f, #bea154); }
+    background: #c2a75f; }
   .poketype[data-poketype="13"] {
-    border: 1px solid #6c6ca1;
-    background: linear-gradient(to bottom, #6c6ca1, #63639b); }
+    background: #6c6ca1; }
   .poketype[data-poketype="14"] {
-    border: 1px solid #6687e3;
-    background: linear-gradient(to bottom, #6687e3, #597de1); }
+    background: #6687e3; }
   .poketype[data-poketype="15"] {
-    border: 1px solid #6c594e;
-    background: linear-gradient(to bottom, #6c594e, #635248); }
+    background: #6c594e; }
   .poketype[data-poketype="16"] {
-    border: 1px solid #c7d4e0;
-    background: linear-gradient(to bottom, #c7d4e0, #bdccdb); }
+    background: #c7d4e0; }
   .poketype[data-poketype="17"] {
-    border: 1px solid #fa90ba;
-    background: linear-gradient(to bottom, #fa90ba, #f981b1); }
+    background: #fa90ba; }
 
 .poketype-button {
   margin-bottom: 16px;
@@ -85,40 +67,58 @@ body {
     background: #fff;
     text-shadow: none; }
     .poketype-button:hover[data-poketype="0"], .poketype-button.active[data-poketype="0"] {
+      border: 1px solid #b8b895;
       color: #b8b895; }
     .poketype-button:hover[data-poketype="1"], .poketype-button.active[data-poketype="1"] {
+      border: 1px solid #dc5949;
       color: #dc5949; }
     .poketype-button:hover[data-poketype="2"], .poketype-button.active[data-poketype="2"] {
+      border: 1px solid #73b8ea;
       color: #73b8ea; }
     .poketype-button:hover[data-poketype="3"], .poketype-button.active[data-poketype="3"] {
+      border: 1px solid #f2d479;
       color: #f2d479; }
     .poketype-button:hover[data-poketype="4"], .poketype-button.active[data-poketype="4"] {
+      border: 1px solid #95c779;
       color: #95c779; }
     .poketype-button:hover[data-poketype="5"], .poketype-button.active[data-poketype="5"] {
+      border: 1px solid #b8e7e7;
       color: #b8e7e7; }
     .poketype-button:hover[data-poketype="6"], .poketype-button.active[data-poketype="6"] {
+      border: 1px solid #873530;
       color: #873530; }
     .poketype-button:hover[data-poketype="7"], .poketype-button.active[data-poketype="7"] {
+      border: 1px solid #9b5fa7;
       color: #9b5fa7; }
     .poketype-button:hover[data-poketype="8"], .poketype-button.active[data-poketype="8"] {
+      border: 1px solid #e3cb8e;
       color: #e3cb8e; }
     .poketype-button:hover[data-poketype="9"], .poketype-button.active[data-poketype="9"] {
+      border: 1px solid #b2bdea;
       color: #b2bdea; }
     .poketype-button:hover[data-poketype="10"], .poketype-button.active[data-poketype="10"] {
+      border: 1px solid #e36c9b;
       color: #e36c9b; }
     .poketype-button:hover[data-poketype="11"], .poketype-button.active[data-poketype="11"] {
+      border: 1px solid #bdb85f;
       color: #bdb85f; }
     .poketype-button:hover[data-poketype="12"], .poketype-button.active[data-poketype="12"] {
+      border: 1px solid #c2a75f;
       color: #c2a75f; }
     .poketype-button:hover[data-poketype="13"], .poketype-button.active[data-poketype="13"] {
+      border: 1px solid #6c6ca1;
       color: #6c6ca1; }
     .poketype-button:hover[data-poketype="14"], .poketype-button.active[data-poketype="14"] {
+      border: 1px solid #6687e3;
       color: #6687e3; }
     .poketype-button:hover[data-poketype="15"], .poketype-button.active[data-poketype="15"] {
+      border: 1px solid #6c594e;
       color: #6c594e; }
     .poketype-button:hover[data-poketype="16"], .poketype-button.active[data-poketype="16"] {
+      border: 1px solid #c7d4e0;
       color: #c7d4e0; }
     .poketype-button:hover[data-poketype="17"], .poketype-button.active[data-poketype="17"] {
+      border: 1px solid #fa90ba;
       color: #fa90ba; }
 
 .result-container {

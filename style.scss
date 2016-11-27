@@ -27,13 +27,12 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    text-shadow: 0 0 5px rgba(#000, 0.4);
+    text-shadow: 0 0 5px rgba(#000, 0.2);
     border-radius: 4px;
     @for $i from 1 to 19 {
         &[data-poketype="#{$i - 1}"] {
             $poke_type_color: nth($poke_type_colors, $i);
-            border: 1px solid $poke_type_color;
-            background: linear-gradient(to bottom, $poke_type_color, darken($poke_type_color, 3%));
+            background: $poke_type_color;
         }
     }
 }
@@ -43,12 +42,12 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
     cursor: pointer;
     &:hover,
     &.active {
-        // box-shadow: 0 0 10px 0 rgba(#000, 0.4);
         background: #fff;
         text-shadow: none;
         @for $i from 1 to 19 {
             &[data-poketype="#{$i - 1}"] {
                 $poke_type_color: nth($poke_type_colors, $i);
+                border: 1px solid $poke_type_color;
                 color: $poke_type_color;
             }
         }
