@@ -73,6 +73,8 @@
                 $elem.removeClass("active");
             });
             $active_poketypes = [$this];
+            
+            $resultPoketype.text("").attr("data-poketype", -1);
         }
     });
 

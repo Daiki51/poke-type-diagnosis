@@ -2,8 +2,8 @@ body {
   font-family: "Meiryo", sans-serif;
   background: #eee; }
 
-.page {
-  margin: 8px auto;
+.page, .footer {
+  margin: 16px auto;
   overflow: hidden;
   background: #fff;
   max-width: 768px; }
@@ -144,5 +144,9 @@ body {
 
 #hint-text {
   margin-left: 6px; }
+
+.footer {
+  padding: 8px;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

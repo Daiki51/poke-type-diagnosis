@@ -4,8 +4,8 @@ body {
     background: #eee;
 }
 
-.page {
-    margin: 8px auto;
+.page, .footer {
+    margin: 16px auto;
     overflow: hidden;
     background: #fff;
     max-width: 768px;
@@ -80,4 +80,9 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
 
 #hint-text {
     margin-left: 6px;
+}
+
+.footer {
+    padding: 8px;
+    text-align: center;
 }
