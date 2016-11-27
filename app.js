@@ -23,7 +23,7 @@
     ];
 
     var poketypeEfficacy = [
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1],
         [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1],
         [1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1],
         [1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1],
@@ -89,13 +89,13 @@
             if (mode == "normal") {
                 efficacy = poketypeEfficacy[i][type1];
             } else {
-                efficacy = 1 / poketypeEfficacy[i][type1];
+                efficacy = reverseEfficacy(poketypeEfficacy[i][type1]);
             }
             if (type2) {
                 if (mode == "normal") {
                     efficacy *= poketypeEfficacy[i][type2];
                 } else {
-                    efficacy *= 1 / poketypeEfficacy[i][type2];
+                    efficacy *= reverseEfficacy(poketypeEfficacy[i][type2]);
                 }
             }
             if (efficacy >= 2) {
@@ -107,6 +107,19 @@
 
         $resultPoketype.text(poketypeNames[resultPoketype]).attr("data-poketype", resultPoketype);
 
+    }
+    
+    function reverseEfficacy(efficacy) {
+        switch (efficacy) {
+            case 1:
+                return 1;
+            case 0.5:
+                return 2;
+            case 2:
+                return 0.5;
+            case 0:
+                return 2;
+        }
     }
 
     var $modeSwitchButton = $("#mode-switch-button");
