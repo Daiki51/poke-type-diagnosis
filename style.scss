@@ -82,10 +82,9 @@
 .poketype-button {
     margin-bottom: 16px;
     cursor: pointer;
-    &:active,
-    &:hover,
-    &.selected {
-        opacity: 0.5;
+    
+    &:hover, &.active {
+        box-shadow: 0 0 0 24px rgba(#000, 0.2) inset;
     }
 }
 

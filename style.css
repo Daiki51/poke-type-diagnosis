@@ -60,8 +60,8 @@
 .poketype-button {
   margin-bottom: 16px;
   cursor: pointer; }
-  .poketype-button:active, .poketype-button:hover, .poketype-button.selected {
-    opacity: 0.5; }
+  .poketype-button:hover, .poketype-button.active {
+    box-shadow: 0 0 0 24px rgba(0, 0, 0, 0.2) inset; }
 
 .result-container {
   background: #333;

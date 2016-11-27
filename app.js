@@ -43,13 +43,16 @@
         [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1]
     ];
     var pre_selected_poketype = null;
-    var $pre_selected_poketype = null;
+    
+    var $active_poketypes = [];
 
     var mode = "normal";
 
     $(".poketype-button").on("click", function(e) {
-        var selected_poketype = parseInt($(this).attr("data-poketype"));
-        // console.log("clicked:", selected_poketype);
+        var $this = $(this);
+        var selected_poketype = parseInt($this.attr("data-poketype"));
+        
+        $this.addClass("active");
 
         if (pre_selected_poketype != null) {
             if (pre_selected_poketype == selected_poketype) {
@@ -58,13 +61,18 @@
             else {
                 diagnosePoketype(pre_selected_poketype, selected_poketype);
             }
-            $pre_selected_poketype.removeClass("selected");
-            pre_selected_poketype = $pre_selected_poketype = null;
+            
+            pre_selected_poketype = null;
+            
+            $active_poketypes.push($this);
         }
         else {
             pre_selected_poketype = selected_poketype;
-            $pre_selected_poketype = $(this);
-            $pre_selected_poketype.addClass("selected");
+            
+            $.each($active_poketypes, function(i, $elem) {
+                $elem.removeClass("active");
+            });
+            $active_poketypes = [$this];
         }
     });
 
