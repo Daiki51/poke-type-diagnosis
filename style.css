@@ -137,7 +137,8 @@ body {
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 2px; }
-  .hint-box .glyphicon {
-    margin-right: 6px; }
+
+#hint-text {
+  margin-left: 6px; }
 
 /*# sourceMappingURL=style.css.map */

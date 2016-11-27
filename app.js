@@ -131,4 +131,10 @@
         });
         $active_poketypes = [];
     });
+    
+    // ヒントをPC向けに変更
+    if (!('ontouchstart' in window)) {
+        var $hintText = $("#hint-text");
+        $hintText.text($hintText.text().replace(/タップ/g, "クリック"))
+    }
 })();
