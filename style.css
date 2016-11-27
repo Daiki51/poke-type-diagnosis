@@ -1,5 +1,10 @@
-.main {
-  margin-top: 10px; }
+#main {
+  overflow: hidden; }
+
+.masthead {
+  margin-bottom: 16px; }
+  .masthead h1 {
+    font-size: 24px; }
 
 .poketype {
   width: 100%;
@@ -50,7 +55,7 @@
     background: linear-gradient(to bottom, #fa90ba, #f981b1); }
 
 .poketype-button {
-  margin-bottom: 24px; }
+  margin-bottom: 16px; }
   .poketype-button:active, .poketype-button.selected {
     opacity: 0.5; }
 
@@ -58,9 +63,17 @@
   background: #333;
   color: #fff;
   font-size: 18px;
-  padding-top: 10px; }
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 16px; }
 
 #result {
-  margin: 10px 0; }
+  margin-top: 8px; }
+
+.hint-box {
+  background: #eee;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 2px; }
 
 /*# sourceMappingURL=style.css.map */

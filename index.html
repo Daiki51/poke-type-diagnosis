@@ -9,71 +9,83 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="main row">
-            <div class="col-xs-4">
+            <div class="col-xs-12 masthead">
+                <h1><small>サンムーン フェスサークル</small><br><span id="title">「タイプ相性 診断」 ヘルパー</span></h1>
+                <a type="button" id="mode-switch-button" class="btn btn-default">「逆さ相性 診断」に切り替える</a>
+            </div>
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="0">ノーマル</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="1">ほのお</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="2">みず</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="3">でんき</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="4">くさ</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="5">こおり</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="6">かくとう</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="7">どく</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="8">じめん</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="9">ひこう</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="10">エスパー</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="11">むし</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="12">いわ</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="13">ゴースト</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="14">ドラゴン</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="15">あく</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="16">はがね</div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-3">
                 <div class="poketype poketype-button" data-poketype="17">フェアリー</div>
             </div>
-            <div class="result-container col-xs-12">
-                「効果はバツグンだ！」なのは…
-                <div id="result">
-                    <div id="result-poketype" class="poketype poketype-button"></div>
+            <div class="col-xs-12">
+                <div class="hint-box">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>タイプが1つのときは2回タップするよ！
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="result-container">
+                    「効果はバツグンだ！」なのは…
+                    <div id="result">
+                        <div id="result-poketype" class="poketype"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script>
         (function(i, s, o, g, r, a, m) {
