@@ -9,6 +9,7 @@
     }
 }
 
+$poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5fa7 #e3cb8e #b2bdea #e36c9b #bdb85f #c2a75f #6c6ca1 #6687e3 #6c594e #c7d4e0 #fa90ba;
 .poketype {
     width: 100%;
     height: 48px;
@@ -23,68 +24,29 @@
     user-select: none;
     text-shadow: 0 0 5px rgba(#000, 0.4);
     border-radius: 4px;
-    &[data-poketype="0"] {
-        background: linear-gradient(to bottom, #b8b895, darken(#b8b895, 3%));
-    }
-    &[data-poketype="1"] {
-        background: linear-gradient(to bottom, #dc5949, darken(#dc5949, 3%));
-    }
-    &[data-poketype="2"] {
-        background: linear-gradient(to bottom, #73b8ea, darken(#73b8ea, 3%));
-    }
-    &[data-poketype="3"] {
-        background: linear-gradient(to bottom, #f2d479, darken(#f2d479, 3%));
-    }
-    &[data-poketype="4"] {
-        background: linear-gradient(to bottom, #95c779, darken(#95c779, 3%));
-    }
-    &[data-poketype="5"] {
-        background: linear-gradient(to bottom, #b8e7e7, darken(#b8e7e7, 3%));
-    }
-    &[data-poketype="6"] {
-        background: linear-gradient(to bottom, #873530, darken(#873530, 3%));
-    }
-    &[data-poketype="7"] {
-        background: linear-gradient(to bottom, #9b5fa7, darken(#9b5fa7, 3%));
-    }
-    &[data-poketype="8"] {
-        background: linear-gradient(to bottom, #e3cb8e, darken(#e3cb8e, 3%));
-    }
-    &[data-poketype="9"] {
-        background: linear-gradient(to bottom, #b2bdea, darken(#b2bdea, 3%));
-    }
-    &[data-poketype="10"] {
-        background: linear-gradient(to bottom, #e36c9b, darken(#e36c9b, 3%));
-    }
-    &[data-poketype="11"] {
-        background: linear-gradient(to bottom, #bdb85f, darken(#bdb85f, 3%));
-    }
-    &[data-poketype="12"] {
-        background: linear-gradient(to bottom, #c2a75f, darken(#c2a75f, 3%));
-    }
-    &[data-poketype="13"] {
-        background: linear-gradient(to bottom, #6c6ca1, darken(#6c6ca1, 3%));
-    }
-    &[data-poketype="14"] {
-        background: linear-gradient(to bottom, #6687e3, darken(#6687e3, 3%));
-    }
-    &[data-poketype="15"] {
-        background: linear-gradient(to bottom, #6c594e, darken(#6c594e, 3%));
-    }
-    &[data-poketype="16"] {
-        background: linear-gradient(to bottom, #c7d4e0, darken(#c7d4e0, 3%));
-    }
-    &[data-poketype="17"] {
-        background: linear-gradient(to bottom, #fa90ba, darken(#fa90ba, 3%));
+    @for $i from 1 to 19 {
+        &[data-poketype="#{$i - 1}"] {
+            $poke_type_color: nth($poke_type_colors, $i);
+            border: 1px solid $poke_type_color;
+            background: linear-gradient(to bottom, $poke_type_color, darken($poke_type_color, 3%));
+        }
     }
 }
 
 .poketype-button {
     margin-bottom: 16px;
     cursor: pointer;
-    
-    &:hover, &.active {
-        box-shadow: 0 0 0 24px rgba(#000, 0.2) inset;
+    &:hover,
+    &.active {
+        // box-shadow: 0 0 10px 0 rgba(#000, 0.4);
+        background: #fff;
+        text-shadow: none;
+        @for $i from 1 to 19 {
+            &[data-poketype="#{$i - 1}"] {
+                $poke_type_color: nth($poke_type_colors, $i);
+                color: $poke_type_color;
+            }
+        }
     }
 }
 

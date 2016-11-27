@@ -122,6 +122,13 @@
             $title.text($title.text().replace(/逆さ相性/g, "タイプ相性"));
             mode = "normal";
         }
+        
+        // リセット
         $resultPoketype.text("").attr("data-poketype", -1);
+        pre_selected_poketype = null;
+        $.each($active_poketypes, function(i, $elem) {
+            $elem.removeClass("active");
+        });
+        $active_poketypes = [];
     });
 })();
