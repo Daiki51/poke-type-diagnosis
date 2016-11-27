@@ -1,10 +1,14 @@
 
 body {
     font-family: "Meiryo", sans-serif;
+    background: #eee;
 }
 
-#main {
+.page {
+    margin: 8px auto;
     overflow: hidden;
+    background: #fff;
+    max-width: 768px;
 }
 
 .masthead {

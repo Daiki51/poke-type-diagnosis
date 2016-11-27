@@ -1,8 +1,12 @@
 body {
-  font-family: "Meiryo", sans-serif; }
+  font-family: "Meiryo", sans-serif;
+  background: #eee; }
 
-#main {
-  overflow: hidden; }
+.page {
+  margin: 8px auto;
+  overflow: hidden;
+  background: #fff;
+  max-width: 768px; }
 
 .masthead {
   margin-bottom: 16px; }
