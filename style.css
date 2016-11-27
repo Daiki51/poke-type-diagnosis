@@ -14,9 +14,12 @@
   font-size: 16px;
   font-weight: bold;
   color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-  border-radius: 2px; }
+  border-radius: 4px; }
   .poketype[data-poketype="0"] {
     background: linear-gradient(to bottom, #b8b895, #b2b28c); }
   .poketype[data-poketype="1"] {
@@ -75,5 +78,7 @@
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 2px; }
+  .hint-box .glyphicon {
+    margin-right: 6px; }
 
 /*# sourceMappingURL=style.css.map */
