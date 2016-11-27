@@ -1,0 +1,66 @@
+.main {
+  margin-top: 10px; }
+
+.poketype {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  user-select: none;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 2px; }
+  .poketype[data-poketype="0"] {
+    background: linear-gradient(to bottom, #b8b895, #b2b28c); }
+  .poketype[data-poketype="1"] {
+    background: linear-gradient(to bottom, #dc5949, #da4d3c); }
+  .poketype[data-poketype="2"] {
+    background: linear-gradient(to bottom, #73b8ea, #66b1e8); }
+  .poketype[data-poketype="3"] {
+    background: linear-gradient(to bottom, #f2d479, #f1d06b); }
+  .poketype[data-poketype="4"] {
+    background: linear-gradient(to bottom, #95c779, #8cc26e); }
+  .poketype[data-poketype="5"] {
+    background: linear-gradient(to bottom, #b8e7e7, #ade3e3); }
+  .poketype[data-poketype="6"] {
+    background: linear-gradient(to bottom, #873530, #7c312c); }
+  .poketype[data-poketype="7"] {
+    background: linear-gradient(to bottom, #9b5fa7, #93589f); }
+  .poketype[data-poketype="8"] {
+    background: linear-gradient(to bottom, #e3cb8e, #e0c582); }
+  .poketype[data-poketype="9"] {
+    background: linear-gradient(to bottom, #b2bdea, #a6b3e7); }
+  .poketype[data-poketype="10"] {
+    background: linear-gradient(to bottom, #e36c9b, #e15f92); }
+  .poketype[data-poketype="11"] {
+    background: linear-gradient(to bottom, #bdb85f, #b9b354); }
+  .poketype[data-poketype="12"] {
+    background: linear-gradient(to bottom, #c2a75f, #bea154); }
+  .poketype[data-poketype="13"] {
+    background: linear-gradient(to bottom, #6c6ca1, #63639b); }
+  .poketype[data-poketype="14"] {
+    background: linear-gradient(to bottom, #6687e3, #597de1); }
+  .poketype[data-poketype="15"] {
+    background: linear-gradient(to bottom, #6c594e, #635248); }
+  .poketype[data-poketype="16"] {
+    background: linear-gradient(to bottom, #c7d4e0, #bdccdb); }
+  .poketype[data-poketype="17"] {
+    background: linear-gradient(to bottom, #fa90ba, #f981b1); }
+
+.poketype-button {
+  margin-bottom: 24px; }
+  .poketype-button:active, .poketype-button.selected {
+    opacity: 0.5; }
+
+.result-container {
+  background: #333;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 10px; }
+
+#result {
+  margin: 10px 0; }
+
+/*# sourceMappingURL=style.css.map */
