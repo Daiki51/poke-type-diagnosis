@@ -25,7 +25,7 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
     line-height: 48px;
     text-align: center;
     font-size: 16px;
-    font-weight: bold;
+    // font-weight: bold;
     color: #fff;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -85,4 +85,7 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
 .footer {
     padding: 8px;
     text-align: center;
+    .separator {
+        color: #aaa;
+    }
 }

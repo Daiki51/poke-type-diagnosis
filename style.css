@@ -19,7 +19,6 @@ body {
   line-height: 48px;
   text-align: center;
   font-size: 16px;
-  font-weight: bold;
   color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -148,5 +147,7 @@ body {
 .footer {
   padding: 8px;
   text-align: center; }
+  .footer .separator {
+    color: #aaa; }
 
 /*# sourceMappingURL=style.css.map */
