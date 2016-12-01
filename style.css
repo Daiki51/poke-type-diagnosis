@@ -64,6 +64,8 @@ body {
     background: #fa90ba; }
 
 .poketype-button {
+  border: 0;
+  outline: none;
   margin-bottom: 16px;
   cursor: pointer; }
   .poketype-button:hover, .poketype-button.active {

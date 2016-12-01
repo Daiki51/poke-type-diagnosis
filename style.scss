@@ -42,6 +42,8 @@ $poke-type-colors: #b8b895 #dc5949 #73b8ea #f2d479 #95c779 #b8e7e7 #873530 #9b5f
 }
 
 .poketype-button {
+    border: 0;
+    outline: none;
     margin-bottom: 16px;
     cursor: pointer;
     &:hover,
