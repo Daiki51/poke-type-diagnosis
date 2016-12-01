@@ -46,11 +46,30 @@
         [1.0, 0.5, 0.5, 0.5, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 2.0],
         [1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 0.5, 1.0]
     ];
+
+    // 逆さ相性診断かどうか
+    var isReverse = false;
+
+    // 1回目に選択されたポケモンのタイプ
     var pre_selected_poketype = null;
 
-    var $active_poketypes = [];
+    // 選択されたポケモンのタイプを表すボタンのDOMリスト
+    var $selected_poketypes = [];
 
-    var mode = "normal";
+    // 診断結果を表示するDOM
+    var $resultPoketype = $("#result-poketype");
+    
+    // 相性診断と逆さ診断を切り替えるボタンのDOM
+    var $modeSwitchButton = $("#mode-switch-button");
+    
+    // タイトルのDOM
+    var $title = $("#title");
+
+    // ヒントをPC向けに変更
+    if (!('ontouchstart' in window)) {
+        var $hintText = $("#hint-text");
+        $hintText.text($hintText.text().replace(/タップ/g, "クリック"));
+    }
 
     $(".poketype-button").on("click", function(e) {
         var $this = $(this);
@@ -59,13 +78,9 @@
         if (pre_selected_poketype == null) {
             // 1つ目のタイプの選択
             pre_selected_poketype = selected_poketype;
-
-            $.each($active_poketypes, function(i, $elem) {
-                $elem.removeClass("active");
-            });
-            $active_poketypes = [$this];
-
-            $resultPoketype.text("").attr("data-poketype", -1);
+            // リセット
+            clearSelectedType();
+            clearResultType();
         }
         else {
             // 2つ目のタイプの選択
@@ -75,30 +90,62 @@
             else {
                 diagnosePoketype(pre_selected_poketype, selected_poketype);
             }
-
             pre_selected_poketype = null;
-
-            $active_poketypes.push($this);
         }
-        
-        $this.addClass("active");
+        $selected_poketypes.push($this);
+        $this.addClass("selected");
     });
 
-    var $resultPoketype = $("#result-poketype");
+    $modeSwitchButton.on("click", function(e) {
+        if (!isReverse) {
+            $modeSwitchButton.text($modeSwitchButton.text().replace(/逆さ相性/g, "タイプ相性"));
+            $title.text($title.text().replace(/タイプ相性/g, "逆さ相性"));
+            isReverse = true;
+        }
+        else {
+            $modeSwitchButton.text($modeSwitchButton.text().replace(/タイプ相性/g, "逆さ相性"));
+            $title.text($title.text().replace(/逆さ相性/g, "タイプ相性"));
+            isReverse = false;
+        }
+        // リセット
+        pre_selected_poketype = null;
+        clearSelectedType();
+        clearResultType();
+    });
+
+    function clearSelectedType() {
+        $.each($selected_poketypes, function(i, $elem) {
+            $elem.removeClass("selected");
+        });
+        $selected_poketypes = [];
+    }
+
+    function setResultType(type) {
+        $resultPoketype.text(poketypeNames[type]).attr("data-poketype", type);
+    }
+
+    function clearResultType() {
+        $resultPoketype.text("").attr("data-poketype", -1);
+    }
 
     function diagnosePoketype(defenseType1, defenseType2) {
-        console.log("diagnose:", poketypeNames[defenseType1], defenseType2 ? poketypeNames[defenseType2] : "");
-
+        // console.log("diagnose:", poketypeNames[defenseType1], defenseType2 ? poketypeNames[defenseType2] : "");
         var attackType;
         for (attackType = 0; attackType < 18; attackType++) {
-            if (computeEfficacy(attackType, defenseType1, defenseType2, mode == "reverse") >= 2) {
+            if (computeEfficacy(attackType, defenseType1, defenseType2, isReverse) >= 2) {
                 break;
             }
         }
-        // console.log(resultPoketype);
-        $resultPoketype.text(poketypeNames[attackType]).attr("data-poketype", attackType);
+        setResultType(attackType);
     }
 
+    /**
+     * 攻撃するときのタイプの相性(倍率)を計算します。
+     * @param {number} attackType 攻撃する技のタイプ。
+     * @param {number} defenseType1 防御するポケモンのタイプ。
+     * @param {number} defenseType2 防御するポケモンのタイプ。
+     * @param {boolean} isReverse 相性を逆さにするかどうか。
+     */
     function computeEfficacy(attackType, defenseType1, defenseType2, isReverse) {
         if (arguments.length < 4) {
             isReverse = false;
@@ -124,6 +171,10 @@
         return efficacy;
     }
 
+    /**
+     * タイプの相性(倍率)を逆さにします。
+     * @param {number} efficacy 逆さにするタイプの相性(倍率)。
+     */
     function reverseEfficacy(efficacy) {
         switch (efficacy) {
             case 1.0:
@@ -135,35 +186,5 @@
             case 0.0:
                 return 2.0;
         }
-    }
-
-    var $modeSwitchButton = $("#mode-switch-button");
-    var $title = $("#title");
-
-    $modeSwitchButton.on("click", function(e) {
-        if (mode == "normal") {
-            $modeSwitchButton.text($modeSwitchButton.text().replace(/逆さ相性/g, "タイプ相性"));
-            $title.text($title.text().replace(/タイプ相性/g, "逆さ相性"));
-            mode = "reverse";
-        }
-        else {
-            $modeSwitchButton.text($modeSwitchButton.text().replace(/タイプ相性/g, "逆さ相性"));
-            $title.text($title.text().replace(/逆さ相性/g, "タイプ相性"));
-            mode = "normal";
-        }
-
-        // リセット
-        $resultPoketype.text("").attr("data-poketype", -1);
-        pre_selected_poketype = null;
-        $.each($active_poketypes, function(i, $elem) {
-            $elem.removeClass("active");
-        });
-        $active_poketypes = [];
-    });
-
-    // ヒントをPC向けに変更
-    if (!('ontouchstart' in window)) {
-        var $hintText = $("#hint-text");
-        $hintText.text($hintText.text().replace(/タップ/g, "クリック"))
     }
 })();
